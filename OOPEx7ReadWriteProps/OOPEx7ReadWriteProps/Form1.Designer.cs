@@ -36,6 +36,7 @@ namespace OOPEx7ReadWriteProps
             this.label3 = new System.Windows.Forms.Label();
             this.txtHeight = new System.Windows.Forms.TextBox();
             this.txtDiameter = new System.Windows.Forms.TextBox();
+            this.chkHastString = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +57,7 @@ namespace OOPEx7ReadWriteProps
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(32, 277);
+            this.btnCreate.Location = new System.Drawing.Point(32, 293);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(364, 49);
             this.btnCreate.TabIndex = 2;
@@ -96,11 +97,22 @@ namespace OOPEx7ReadWriteProps
             this.txtDiameter.Size = new System.Drawing.Size(364, 26);
             this.txtDiameter.TabIndex = 6;
             // 
+            // chkHastString
+            // 
+            this.chkHastString.AutoSize = true;
+            this.chkHastString.Location = new System.Drawing.Point(32, 242);
+            this.chkHastString.Name = "chkHastString";
+            this.chkHastString.Size = new System.Drawing.Size(113, 24);
+            this.chkHastString.TabIndex = 7;
+            this.chkHastString.Text = "Has a string";
+            this.chkHastString.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 394);
+            this.Controls.Add(this.chkHastString);
             this.Controls.Add(this.txtDiameter);
             this.Controls.Add(this.txtHeight);
             this.Controls.Add(this.label3);
@@ -126,6 +138,7 @@ namespace OOPEx7ReadWriteProps
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtHeight;
         private System.Windows.Forms.TextBox txtDiameter;
+        private System.Windows.Forms.CheckBox chkHastString;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +11,20 @@ namespace Wmad.Party.Store
     {
         #region Private Fields
 
-        /*
-         * camelCase for fields
-         */
+        //camelCase for fields
         private string colour;
         private int height;
         private int diameter;
 
         #endregion
 
-        #region Public Properties
+        #region Auto Properties
+
+        public bool HasString { get; set; }
+
+        #endregion
+
+          #region Public Properties
 
         /// <summary>
         /// This is the balloon colour
@@ -47,6 +52,10 @@ namespace Wmad.Party.Store
             }
             set
             {
+                //Validate the height. It must be between 1 and 10 inclusive
+                if (value < 1 || value > 10)
+
+                    throw new ConstraintException("Height must be between 1 and 10");
                 height = value;
             }
         }
@@ -62,7 +71,19 @@ namespace Wmad.Party.Store
             }
             set
             {
-                diameter = value;
+                //make sure colour has already been set
+                if (String.IsNullOrEmpty(Colour))
+                    throw new DataException("Colour must be set before diameter");
+
+                //diameter validations
+                if (Colour.ToLower() == "red" && value < 12)
+                    throw new ConstraintException("Diameter for a red balloon must be 12 or higher. ");
+                else if (Colour.ToLower() == "white" && value < 10)
+                    throw new ConstraintException("Diameter for a white balloon must be 12 or higher. ");
+                else if (value <= 0)
+                    throw new ConstraintException("Diameter must be greater than 0. ");
+                else 
+                    diameter = value;
             }
         }
 

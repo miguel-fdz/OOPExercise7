@@ -13,6 +13,8 @@ namespace OOPEx7ReadWriteProps
 {
     public partial class Form1 : Form
     {
+        List<Balloon> balloons = new List<Balloon>();
+
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +29,9 @@ namespace OOPEx7ReadWriteProps
                 myBalloon.Colour = txtColour.Text;
                 myBalloon.Diameter = Convert.ToInt32(txtDiameter.Text);
                 myBalloon.Height = Convert.ToInt32(txtHeight.Text);
+                myBalloon.HasString = chkHastString.Checked;
+
+                balloons.Add(myBalloon);
 
                 MessageBox.Show($"Colour : {myBalloon.Colour} \n" +
                                 $"Height: {myBalloon.Height} \n" +
